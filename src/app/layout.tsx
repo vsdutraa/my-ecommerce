@@ -1,3 +1,6 @@
+// global context provider
+import { GlobalProvider } from "./GlobalProvider";
+
 // styles
 import "@/styles/globals.css";
 
@@ -10,14 +13,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <nav>
-          <Link href="/">Home</Link>
-          <Link href="/shop">Shop</Link>
-        </nav>
-        <main>{children}</main>
-      </body>
-    </html>
+    <GlobalProvider>
+      <html lang="en">
+        <body>
+          <nav>
+            <Link href="/">Home</Link>
+            <Link href="/shop">Shop</Link>
+          </nav>
+          <main>{children}</main>
+        </body>
+      </html>
+    </GlobalProvider>
   );
 }

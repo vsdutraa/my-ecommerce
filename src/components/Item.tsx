@@ -4,7 +4,8 @@ import styles from "@/styles/Item.module.css";
 // next imports
 import Link from "next/link";
 
-export default function Item({ item }: any) {
+// fix type later
+export default function Item({ item }: { item: any }) {
   const { id, name, img, price } = item;
 
   return (
